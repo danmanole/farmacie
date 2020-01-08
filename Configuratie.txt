@@ -1,0 +1,25 @@
+Configuratie controllere
+------------------------
+1. Controllere pagini web:
+in directorul app/Controllers, extind BaseController
+exemplu: HomeController.php
+
+2. Controllere RESTful:
+in directorul app/Models/Entity si app/Models creati entitatea si modelul (extind Entity si Model)
+apoi adaugati rutele pentru resurse in app/Config/Routes.php
+exemplu: 
+ - entitate app/Models/Entity/User.php
+ - model app/Models/UserModel.php
+in Routes.php:
+
+$routes->resource('users', ['controller' => 'App\Controllers\UserController']);
+	
+Se vor crea urmatoarele rute:
+$routes->get('users/new',        'UserController::new');
+$routes->post('users',           'UserController::create');
+$routes->get('users',            'UserController::index');
+$routes->get('users/(:id)',      'UserController::show/$1');
+$routes->get('users/(:id)/edit', 'UserController::edit/$1');
+$routes->put('users/(:id)',      'UserController::update/$1');
+$routes->patch('users/(:id)',    'UserController::update/$1');
+$routes->delete('users/(:id)',   'UserController::delete/$1');
