@@ -2,8 +2,8 @@
 <html>
 <head>
 <?php 
-$path = '/farmacie1/public/'  ;
-$appPath = '/farmacie1/public/index.php/';
+$path = '/farmacie/public/'  ;
+$appPath = '/farmacie/public/index.php/';
 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<?php echo $path;?>css/style.css">

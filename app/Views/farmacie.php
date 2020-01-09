@@ -2,7 +2,7 @@
 <html>
 <head>
 <?php 
-$path = '/farmacie1/public/'  ;
+$path = '/farmacie/public/'  ;
 ?>
 <link rel="stylesheet" href="<?php echo $path;?>css/style.css">
 <link rel="stylesheet" href="<?php echo $path;?>css/jquery-ui.min.css">

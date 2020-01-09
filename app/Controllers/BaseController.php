@@ -32,7 +32,7 @@ class BaseController extends Controller
 	protected $db; // database
 	protected $session; // HTTP session
 	
-	protected $mainPath = "/farmacie1/public/index.php/";
+	protected $mainPath = "/farmacie/public/index.php/";
 	
 	/**
 	 * Constructor.
