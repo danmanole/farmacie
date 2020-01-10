@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 08, 2020 at 05:15 PM
+-- Generation Time: Jan 09, 2020 at 08:14 AM
 -- Server version: 10.1.43-MariaDB-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.1
 
@@ -236,7 +236,7 @@ INSERT INTO `vanzare` (`codv`, `cant`, `codm`, `codr`) VALUES
 --
 ALTER TABLE `bon`
   ADD PRIMARY KEY (`codb`),
-  ADD KEY `codv_idx` (`codv`);
+  ADD KEY `codv_fk` (`codv`);
 
 --
 -- Indexes for table `client`
@@ -263,7 +263,7 @@ ALTER TABLE `medicament`
 --
 ALTER TABLE `reteta`
   ADD PRIMARY KEY (`codr`),
-  ADD KEY `codc_idx` (`codc`);
+  ADD KEY `codc_fk` (`codc`);
 
 --
 -- Indexes for table `users`
@@ -283,8 +283,8 @@ ALTER TABLE `users_farmacie`
 --
 ALTER TABLE `vanzare`
   ADD PRIMARY KEY (`codv`),
-  ADD KEY `codm_idx` (`codm`),
-  ADD KEY `codr_idx` (`codr`);
+  ADD KEY `codm_fk` (`codm`),
+  ADD KEY `codr_fk` (`codr`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -297,16 +297,40 @@ ALTER TABLE `bon`
   MODIFY `codb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `client`
+--
+ALTER TABLE `client`
+  MODIFY `codc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `farmacie`
 --
 ALTER TABLE `farmacie`
   MODIFY `codf` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `medicament`
+--
+ALTER TABLE `medicament`
+  MODIFY `codm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `reteta`
+--
+ALTER TABLE `reteta`
+  MODIFY `codr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `codu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `vanzare`
+--
+ALTER TABLE `vanzare`
+  MODIFY `codv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
@@ -316,13 +340,13 @@ ALTER TABLE `users`
 -- Constraints for table `bon`
 --
 ALTER TABLE `bon`
-  ADD CONSTRAINT `codv` FOREIGN KEY (`codv`) REFERENCES `vanzare` (`codv`);
+  ADD CONSTRAINT `codv_fk` FOREIGN KEY (`codv`) REFERENCES `vanzare` (`codv`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `reteta`
 --
 ALTER TABLE `reteta`
-  ADD CONSTRAINT `codc` FOREIGN KEY (`codc`) REFERENCES `client` (`codc`);
+  ADD CONSTRAINT `codc_fk` FOREIGN KEY (`codc`) REFERENCES `client` (`codc`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `users_farmacie`
@@ -335,8 +359,8 @@ ALTER TABLE `users_farmacie`
 -- Constraints for table `vanzare`
 --
 ALTER TABLE `vanzare`
-  ADD CONSTRAINT `codm` FOREIGN KEY (`codm`) REFERENCES `medicament` (`codm`),
-  ADD CONSTRAINT `codr` FOREIGN KEY (`codr`) REFERENCES `reteta` (`codr`);
+  ADD CONSTRAINT `codm_fk` FOREIGN KEY (`codm`) REFERENCES `medicament` (`codm`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `codr_fk` FOREIGN KEY (`codr`) REFERENCES `reteta` (`codr`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

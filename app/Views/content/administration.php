@@ -5,9 +5,6 @@
 		<ul>
 			<li><a href="#tab1">Utilizator</a></li>
 			<li><a href="#tab2">Farmacie</a></li>
-			<li><a href="#tab3">Three</a></li>
-			<li><a href="#tab4">Four</a></li>
-
 		</ul>
 		<div id="tab1">
 			<div id="userForm">
@@ -64,10 +61,6 @@
 						<input type="button" onclick="deleteFarmacie()" value="Sterge/Inactiv" />
 					</div>
 			</div>
-		</div>
-		<div id="tab3">
-		</div>
-		<div id="tab4">
 		</div>
 	</div>
 </div>

@@ -1,73 +1,45 @@
-<div>
-one &nbsp;&nbsp;&nbsp;&nbsp;           two<br/>
-trei
+<div style="margin: 10px;">
+	<div class="ui-tabs-vertical">
+		<ul>
+			<li><a href="#tab1">Vanzare</a></li>
 
-<ol>
-<?php 
-$tmp = '';
-for ($i = 1; $i < 11; $i++) {
-    $tmp .= "<li>Client $i</li>";// $tmp = $tmp +   "<li>$i</li>"
-}
-echo $tmp;
-?>
-</ol>
-
-<?php 
-$tbl = array(
-    array('numePers' => 'Vasile', 'cantitate' => 2),
-    array('numePers' => 'Ion', 'cantitate' => 101),
-    array('numePers' => 'Petrica', 'cantitate' => 20),
-    array('numePers' => 'Vasilica', 'cantitate' => 4)
-);
-?>
-
-<table id="coco">
-	<tr>
-		<th>Nume</th><th>Cantitate</th>
-	</tr>
-
-<?php 
-
-foreach ($tbl as $rand) {
-    
-    $nume = $rand['numePers'];
-    $cant = $rand['cantitate'];
-    /*
-    $tmp = '<tr>';  
-    $tmp .= '<td>'. $nume . '</td><td>' . $cant . '</td>';
-    $tmp .= '</tr>';
-    */
-    /*$tmp = "<tr><td>$nume</td><td>$cant</td></tr>";*/
-    $tmp = "<tr><td>$rand[numePers]</td><td>$rand[cantitate]</td></tr>";
-    echo $tmp;
-}
-
-?>
-</table>
-
-<?php 
-
-$a = 10;
-$b = 3;
-echo "$a$b<br>";
-echo "$ab<br>";// nu functioneaza pentru ca php se ganeste ca ai nevoie de $ab
-echo "{$a}b";// trebuie sa separ variabila $a de litera b, ele sunt "interpretate"
-
-?>
-<p></p>
-<input type="button" onclick="toto()" value="aaa"/>
-
-<div id="din"></div>
-<table id="a101">
-
-
-</table>
-<script type="text/javascript">
-
-function toto() {
-
-	$('#din').html('aaa');
-}
-
-</script>
+		</ul>
+		<div id="tab1">
+		<div id="editareMedicamentForm">
+				<h3>Reteta</h3>
+    				<div class="ui-widget left">
+      					<label for="clienti">Client </label>
+      					<input type="text" class="searchBox" id="clienti" /> 
+      					<select id="clientList" class="searchCombo"></select>
+    				</div>
+    				<div class="ui-widget left">
+      					<label for="doctori">Doctor </label>
+      					<input type="text" class="searchBox" id="doctori" /> 
+      					<select id="doctorList" class="searchCombo"></select>
+    				</div>
+    				
+					<input type="text" id="nume" name="nume" placeholder="Nume" class="halfBox" />
+					<input type="text" id="prenume" name="prenume" placeholder="Prenume" class="halfBox" /><br>
+					<input type="text" id="doctor" name="doctor" placeholder="Doctor" class="fullBox" /><br>
+					<label for="retete">Retete client</label>
+					<select id="retete" class="almostFullBox"></select>
+					<div class="ui-widget left">
+      					<label for="medicamente">Medicament </label>
+      					<input type="text" class="searchBox" id="medicamente" /> 
+      					<select id="medicamentList" class="searchCombo"></select>
+    				</div>
+					<input type="text" id="medicament" name="medicament" placeholder="Denumire" class="fullBox" /><br>
+					<input type="text" id="producator" name="producator" placeholder="Producator" class="fullBox" /><br>
+					Cantitate <input type="text" id="cantitate" name="cantitate" class="priceBox" />
+					Stoc <input type="text" id="stoc" name="stoc" class="priceBox readOnly" />
+					Pret <input type="text" id="pret" name="pret" class="priceBox readOnly"/>
+					Total <input type="text" id="total" name="total" class="priceBox readOnly"/><br>
+					
+    				<div class="ui-widget top20">
+						<input type="button" onclick="findReteta()" value="Cauta reteta" />
+						<input type="button" onclick="addVanzare()" value="Vanzare" />
+					</div>
+			</div>
+		</div>
+	</div>
 </div>

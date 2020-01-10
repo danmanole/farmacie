@@ -65,6 +65,7 @@ function newUser() {
 	$("#password1").val('');
 	$("#password2").val('');
 	$("#job").val('');
+	refreshFarmacii();
 	codu = -1;
 }
 
@@ -129,8 +130,7 @@ function completeUserBox(data) {
 // Citeste toate farmaciile (pentru combo din interfata)
 function refreshFarmacii() {
 	ajax("GET", "../farmacieController", null, function(data) {
-		fillCombo("#usersList", v);
-		newUser();
+		fillCombo("#userFarmacie", v);
 	});
 }
 

@@ -134,6 +134,15 @@ function setVisible(elementId, visible) {
 	}
 }
 
+function getCurrentDate() {
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth() + 1; //January is 0!
+	var yyyy = today.getFullYear();
+	var today = yyyy + '-' + mm + '-' + dd;
+	return today;
+}
+
 /**
  * Valoare implicita campuri goale
  * @param elementId
@@ -152,7 +161,10 @@ function updateCurrentUser() {
 	case 'Farmacist':
 		switch(currentPage) {
 		case 'MedicamentForm':
-			
+			$("#tab2").hide();
+			$("#tab3").hide();
+			$('#menu li:contains(Editare)').hide();
+			$('#menu li:contains(Achizitie)').hide();
 			break;
 		case 'AdministrareForm':
 			break;
@@ -165,4 +177,14 @@ function updateCurrentUser() {
 	case 'Administrator':
 		break;
 	}
+}
+
+/**
+ * Extracts the URL last parameter e.g. "http://www.zone/aaa" returns aaa
+ * @param url
+ * @returns
+ */
+function urlComponent(url_string, param) {
+	var url = new URL(url_string);
+	return url.searchParams.get(param);
 }

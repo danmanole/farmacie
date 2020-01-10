@@ -2,7 +2,7 @@
 ?>
 <div style="margin: 10px;">
 	<div class="ui-tabs-vertical">
-		<ul>
+		<ul id="menu">
 			<li><a href="#tab1">Lista</a></li>
 			<li><a href="#tab2">Editare</a></li>
 			<li><a href="#tab3">Achizitie</a></li>

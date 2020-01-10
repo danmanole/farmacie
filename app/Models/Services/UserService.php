@@ -13,7 +13,7 @@ class UserService {
     }
     
     public static function getUser($userName) {
-        $sql = "SELECT * FROM users WHERE user='$userName'";
+        $sql = "SELECT * FROM users WHERE lower(user)=lower('$userName') limit 1";
         $query = self::$db->query($sql);
         $rows = $query->getResult();
         foreach ($rows as $row) {

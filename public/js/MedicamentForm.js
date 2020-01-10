@@ -153,6 +153,8 @@ function salvareMedicament() {
 	let pret = $("#pretC").val();
 	if (!$.isNumeric(pret)) {
 		alert("Pret incorect"); return;
+	} else if (pret <= 0) {
+		alert("Pretul trebuie sa fie > 0"); return;
 	}
 	let dataExp = $("#dataExp").val();
 	if (!dataExp) {
@@ -193,12 +195,14 @@ function achizitie() {
 	let pretA = $("#pretA").val();
 	
 	if (!$.isNumeric(cantA)) {
-		alert("Cantitate invalida");
-		return;
+		alert("Cantitate invalida"); return;
+	} else if (candA <= 0) {
+		alert("Cantitatea trebuie sa fie > 0"); return;
 	}
 	if (!$.isNumeric(pretA)) {
-		alert("Pret invalid");
-		return;
+		alert("Pret invalid"); return;
+	} else if (pretA <= 0) {
+		alert("Preturl trebuie sa fie > 0"); return;
 	}
 	
 	let json = {"cant": cantA, "pret": pretA};

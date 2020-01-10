@@ -50,10 +50,13 @@ class Home extends BaseController
 	
 	/*
 	 * home/vanzare
+	 * home/vanzare/codreteta
 	 */
-	public function vanzare() {
+	public function vanzare($codr = null) {
 	    $info = $this->informatii();
+	    $info['script'] = 'VanzareForm.js';
 	    $info['content'] = 'vanzare.php';
+	    $info['codr'] = $codr;
 	    return view(self::FARMACIE, $info);
 	}
 	
@@ -72,26 +75,20 @@ class Home extends BaseController
 	 */
 	public function reteta() {
 	    $info = $this->informatii();
-	    return view(self::FARMACIE, $info);
-	}
-	
-	/*
-	 * home/client
-	 */
-	public function client() {
-	    $info = $this->informatii();
+	    $info['script'] = 'RetetaForm.js';
+	    $info['content'] = 'reteta.php';
 	    return view(self::FARMACIE, $info);
 	}
 	
 	/**
-	 * In functie de nivelul de acces, modifica bara de meniuri
+	 * In functie de job, modifica bara de meniuri
 	 * @return string
 	 */
 	private function informatii() {
-	    $nivelAcces = $this->session->get('nivelAcces');
-	    $bara = RenderService::bara('', $nivelAcces == 1);
+	    $job = $this->session->get('job');
+	    $bara = RenderService::bara('', $job);
 	    $info['bara'] = $bara;
-	    $info['job'] = $this->session->get('job');
+	    $info['job'] = $job;
 	    return $info;
 	}
 }

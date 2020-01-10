@@ -52,7 +52,7 @@ class MedicamentController extends ResourceController {
         $data = $this->request->getPost();
         $sql = "INSERT INTO medicament VALUES(null, '$data[prod]', '$data[den]', "
         . " $data[pret], 0, '$data[data_exp]', '$data[prescriptie]', "
-        . " '$data[nat_exp]', '$data[nat_suba]', '$[suba]', '$[mod_a]', '$[mod_p]'"
+        . " '$data[nat_exp]', '$data[nat_suba]', '$data[suba]', '$data[mod_a]', '$data[mod_p]',"
         . " '$data[contraindicatii]', '$data[continut]')";
         self::$db->query($sql);
         $id = self::$db->insertID();

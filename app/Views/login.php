@@ -12,16 +12,6 @@ $appPath = '/farmacie/public/index.php/';
 <script type="text/javascript" src="<?php echo $path;?>js/script.js"></script>
 </head> 
 <body>
-<?php 
-//https://codeigniter4.github.io/CodeIgniter4/database/index.html
-$db = \Config\Database::connect();
-$query = $db->query("SELECT * FROM bon");
-
-foreach ($query->getResult() as $row)
-{
-    //echo $row->codb . " " . $row->total_plata . "<br>";
-}
-?>
 
 <div class="container">
 
@@ -47,9 +37,11 @@ foreach ($query->getResult() as $row)
       <input type="password" placeholder="Enter Password" name="psw" required>
         
       <button type="submit">Login</button>
+      <!--  
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
+      -->
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
