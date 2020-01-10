@@ -45,6 +45,8 @@ class Home extends BaseController
 	 */
 	public function rapoarte() {
 	    $info = $this->informatii();
+	    $info['script'] = 'RaportForm.js';
+	    $info['content'] = 'raport.php';
 	    return view(self::FARMACIE, $info);
 	}
 	
@@ -57,6 +59,7 @@ class Home extends BaseController
 	    $info['script'] = 'VanzareForm.js';
 	    $info['content'] = 'vanzare.php';
 	    $info['codr'] = $codr;
+	    $info['userId'] = $this->session->get('id');
 	    return view(self::FARMACIE, $info);
 	}
 	

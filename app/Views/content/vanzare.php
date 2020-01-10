@@ -6,7 +6,7 @@
 		</ul>
 		<div id="tab1">
 		<div id="editareMedicamentForm">
-				<h3>Reteta</h3>
+				<h3>Vanzare</h3>
     				<div class="ui-widget left">
       					<label for="clienti">Client </label>
       					<input type="text" class="searchBox" id="clienti" /> 
@@ -43,3 +43,6 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+var userId = <?php echo (isset($userId)) ? $userId : -1; ?>; 
+</script>

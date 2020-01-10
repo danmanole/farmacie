@@ -199,7 +199,10 @@ function addVanzare() {
 	}
 	let data_vanz = getCurrentDate();
 	
-	let json = {"codr" : codr, "codm" : codm, "cant" : cantitate, "data_vanz": data_vanz};
+	// userId este introdus din VanzareController.php direct in pagina "vanzare.php"
+	// cu valoarea utilizatorului logat
+	let json = {"codr" : codr, "codm" : codm, "cant" : cantitate, "data_vanz": data_vanz,
+			"userId": userId};
 	ajax("POST", "../vanzareController/create", json, function(data){
 		$("#cantitate").val('');
 		readMedicament(); // refac stocul conform vanzarii

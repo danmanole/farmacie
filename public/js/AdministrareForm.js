@@ -130,6 +130,12 @@ function completeUserBox(data) {
 // Citeste toate farmaciile (pentru combo din interfata)
 function refreshFarmacii() {
 	ajax("GET", "../farmacieController", null, function(data) {
+		let v = new Array;
+		$.each(data, function(index, value){
+			let key = value.codf;
+			u = {"key": key, "value": value.filiala};
+			v.push(u);
+		});
 		fillCombo("#userFarmacie", v);
 	});
 }

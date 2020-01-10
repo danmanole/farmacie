@@ -271,6 +271,18 @@ text-align: left;
 margin: auto;
 }
 
+#vanzariForm{
+width:600px;
+height:200px;
+border:2px solid #a5a5a5;
+padding:20px;
+background-color:#f3f3f3;
+border-radius:3px;
+text-align: left;
+margin: auto;
+}
+
+
 .ui-tabs-vertical { padding: 0; border-width: 0; }
 .ui-tabs-vertical > .ui-tabs-nav { padding: 0; background: transparent; border-width: 0; float: left; width: 15%; }
 .ui-tabs-vertical > .ui-tabs-nav li { clear: left; width: 100%; border-bottom: 1px solid !important; border-right-width: 0 !important; margin-right: -1px !important; margin-bottom: 0.3em !important; border-top-right-radius: 0; border-bottom-left-radius: 4px; }

@@ -1,5 +1,3 @@
-<?php
-?>
 <div style="margin: 10px;">
 	<div class="ui-tabs-vertical">
 		<ul>

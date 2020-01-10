@@ -12,6 +12,9 @@ $path = '/farmacie/public/'  ;
 
 <script type="text/javascript" src="<?php echo $path;?>js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="<?php echo $path;?>js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?php echo $path;?>js/xlsx/xlsx.core.min.js"></script>
+<script type="text/javascript" src="<?php echo $path;?>js/Blob.js"></script>
+<script type="text/javascript" src="<?php echo $path;?>js/FileSaver.min.js"></script>
 <script type="text/javascript" src="<?php echo $path;?>js/script.js"></script>
 
 
