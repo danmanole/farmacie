@@ -196,13 +196,13 @@ function achizitie() {
 	
 	if (!$.isNumeric(cantA)) {
 		alert("Cantitate invalida"); return;
-	} else if (candA <= 0) {
+	} else if (cantA <= 0) {
 		alert("Cantitatea trebuie sa fie > 0"); return;
 	}
 	if (!$.isNumeric(pretA)) {
 		alert("Pret invalid"); return;
 	} else if (pretA <= 0) {
-		alert("Preturl trebuie sa fie > 0"); return;
+		alert("Pretul trebuie sa fie > 0"); return;
 	}
 	
 	let json = {"cant": cantA, "pret": pretA};
